@@ -1,33 +1,18 @@
 header.header.header-sticky.p-0.mb-4
-  .container-fluid.border-bottom.px-4
+  .container-fluid.border-bottom.px-4.justify-content-start
     button.header-toggler(type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()" style="margin-inline-start: -14px;")
       svg.icon.icon-lg
         use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-menu")
         |
-    ul.header-nav.d-none.d-lg-flex
-      li.nav-item
-        a.nav-link(href="#") Dashboard
-      li.nav-item
-        a.nav-link(href="#") Users
-      li.nav-item
-        a.nav-link(href="#") Settings
-    ul.header-nav.ms-auto
-      li.nav-item
-        a.nav-link(href="#")
-          svg.icon.icon-lg
-            use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell")
-            |
-      li.nav-item
-        a.nav-link(href="#")
-          svg.icon.icon-lg
-            use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-list-rich")
-            |
-      li.nav-item
-        a.nav-link(href="#")
-          svg.icon.icon-lg
-            use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open")
-            |
-    ul.header-nav
+    a.fw-semibold.fs-5.ms-2.link-underline.link-underline-opacity-0(href='#')
+        | DAEDALUS Explore
+    .ms-5.d-none.d-lg-block
+      block breadcrumb
+    .d-none.d-xxl-block.ms-auto.mt-2
+      block progress
+    .d-xxl-none.ms-auto.fixed-bottom.bg-body.p-3.pb-2.border-start.border-top.rounded-start-3.shadow-lg(style='max-width: 728px')
+      block progress
+    ul.d-none.header-nav
       li.nav-item.py-1
         .vr.h-100.mx-2.text-body.text-opacity-75
       li.nav-item.dropdown
@@ -50,73 +35,7 @@ header.header.header-sticky.p-0.mb-4
               svg.icon.icon-lg.me-3
                 use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast")
               | Auto
-      li.nav-item.py-1
-        .vr.h-100.mx-2.text-body.text-opacity-75
-      li.nav-item.dropdown
-        a.nav-link.py-0.pe-0(data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false")
-          .avatar.avatar-md
-            img.avatar-img(src="assets/img/avatars/8.jpg" alt="user@email.com")
-        .dropdown-menu.dropdown-menu-end.pt-0
-          .dropdown-header.bg-body-tertiary.text-body-secondary.fw-semibold.rounded-top.mb-2 Account
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell")
-              |
-            |  Updates
-            span.badge.badge-sm.bg-info.ms-2 42
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open")
-              |
-            |  Messages
-            span.badge.badge-sm.bg-success.ms-2 42
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-task")
-              |
-            |  Tasks
-            span.badge.badge-sm.bg-danger.ms-2 42
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-comment-square")
-              |
-            |  Comments
-            span.badge.badge-sm.bg-warning.ms-2 42
-          .dropdown-header.bg-body-tertiary.text-body-secondary.fw-semibold.my-2
-            .fw-semibold Settings
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user")
-              |
-            |  Profile
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-settings")
-              |
-            |  Settings
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-credit-card")
-              |
-            |  Payments
-            span.badge.badge-sm.bg-secondary.ms-2 42
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-file")
-              |
-            |  Projects
-            span.badge.badge-sm.bg-primary.ms-2 42
-          .dropdown-divider
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked")
-              |
-            |  Lock Account
-          a.dropdown-item(href="#")
-            svg.icon.me-2
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout")
-              |
-            |  Logout
-  .container-fluid.px-4
+  //- Keep font-size to the maximum it can be without going over onto a second line on iPhone SE (small screen)
+  .container-fluid.px-3.d-lg-none(style='font-size: 0.74rem')
     block breadcrumb
 

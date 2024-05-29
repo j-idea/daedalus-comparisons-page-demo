@@ -1,31 +1,49 @@
-.sidebar.sidebar-dark.sidebar-fixed.border-end#sidebar
+.sidebar.sidebar-fixed.border-end#sidebar
   .sidebar-header.border-bottom
     .sidebar-brand
-      svg.sidebar-brand-full(width="88" height="32" alt="CoreUI Logo")
-        use(xlink:href="assets/brand/coreui.svg#full")
-        |
-      svg.sidebar-brand-narrow(width="32" height="32" alt="CoreUI Logo")
-        use(xlink:href="assets/brand/coreui.svg#signet")
+      .sidebar-brand-full
+        img.img-fluid.mb-1(src="assets/brand/IMPERIAL_JAMEEL_INSTITUTE_LOCKUP-p-500.png" alt="Imperial College and Community Jameel logo")
+      .sidebar-brand-narrow
+        img.img-fluid.ms-2(src="assets/brand/Imperial_avatar_500x500px_blue_I.png" alt="Imperial College avatar")
     button.btn-close.d-lg-none(type='button' data-coreui-dismiss='offcanvas' data-coreui-theme="dark" aria-label='Close' onclick='coreui.Sidebar.getInstance(document.querySelector("#sidebar")).toggle()')
   ul.sidebar-nav(data-coreui="navigation" data-simplebar)
     li.nav-item
-      a.nav-link(href='index.html')
+      a.nav-link(href='404.html')
         svg.nav-icon
-          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-speedometer")
-        |  Dashboard
-        span.badge.badge-sm.bg-info.ms-auto NEW
+          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-plus")
+        |  New scenario
     li.nav-title
-      | Theme
+      | Library
     li.nav-item
-      a.nav-link(href='colors.html')
+      a.nav-link(href='404.html')
         svg.nav-icon
-          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-drop")
-        |  Colors
+          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-star")
+        |  My scenarios
     li.nav-item
-      a.nav-link(href='typography.html')
-          svg.nav-icon
-            use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-pencil")
-          |  Typography
+      a.nav-link(href='404.html')
+        svg.nav-icon
+          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-chart")
+        |  My comparisons
+    li.nav-item
+      a.nav-link(href='404.html')
+        svg.nav-icon
+          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-history")
+        |  My history
+    li.nav-title
+      | Teamwork
+    li.nav-item
+      a.nav-link(href='404.html')
+        svg.nav-icon
+          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-share-alt")
+        |  Share
+      a.nav-link(href='404.html')
+        svg.nav-icon
+          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-cloud-download")
+        |  Download
+      a.nav-link(href='404.html')
+        svg.nav-icon
+          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-note-add")
+        |  Add notes
     li.nav-title
       | Components
     li.nav-group
@@ -229,45 +247,6 @@
         svg.nav-icon
           use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-calculator")
         |  Widgets
-        span.badge.badge-sm.bg-info.ms-auto NEW
     li.nav-divider
-    li.nav-title
-      | Extras
-    li.nav-group
-      a.nav-link.nav-group-toggle(href='#')
-        svg.nav-icon
-          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-star")
-        |  Pages
-      ul.nav-group-items.compact
-        li.nav-item
-          a.nav-link(href='login.html' target="_top")
-            svg.nav-icon
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout")
-            |  Login
-        li.nav-item
-          a.nav-link(href='register.html' target="_top")
-            svg.nav-icon
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout")
-            |  Register
-        li.nav-item
-          a.nav-link(href='404.html' target="_top")
-            svg.nav-icon
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bug")
-            |  Error 404
-        li.nav-item
-          a.nav-link(href='500.html' target="_top")
-            svg.nav-icon
-              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bug")
-            |  Error 500
-    li.nav-item.mt-auto
-      a.nav-link(href='https://coreui.io/docs/templates/installation/' target='_blank')
-        svg.nav-icon
-          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-description")
-        |  Docs
-    li.nav-item
-      a.nav-link.text-primary.fw-semibold(href="https://coreui.io/product/bootstrap-dashboard-template/" target="_top")
-        svg.nav-icon.text-primary
-          use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-layers")
-        |  Try CoreUI PRO
   .sidebar-footer.border-top.d-none.d-md-flex      
     button.sidebar-toggler(type="button" data-coreui-toggle="unfoldable")

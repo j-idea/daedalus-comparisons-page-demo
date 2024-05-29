@@ -14,13 +14,29 @@ block scripts
 block breadcrumb
     +breadcrumb(
     [
-      { href: '#', label: 'Home'},
-      { label: 'Dashboard'}
+      { href: '#', label: 'Base scenario'},
+      { href: '#', label: 'Explore more scenarios'},
+      { label: 'By policy response'}
     ]
   )
 
+block progress
+  .progress-group
+    .progress-group-header
+      div Analyses in progress
+      .ms-5 0 of 4 completed
+    .progress-group-bars 
+      .progress
+        .progress-bar.progress-bar-striped.progress-bar-animated(role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='width: 20%')
+
 block view
-  .row.g-4.mb-4
+  .container-fluid.px-4
+    h1.d-md-none.fs-4 Outcomes by policy response
+    h1.d-none.d-md-block.display-6 Outcomes by policy response
+    p.small.text-muted for a SARS-CoV-1 pandemic in Nigeria with low advance investment in vaccination
+    svg.border(width="60" height="60" alt="Globe with Nigeria highlighted")
+      use(xlink:href="assets/img/Nigeria_(orthographic_projection).svg")
+  .d-none.row.g-4.mb-4
     .col-sm-6.col-xl-3
       .card.text-white.bg-primary
         .card-body.pb-0.d-flex.justify-content-between.align-items-start
@@ -111,7 +127,7 @@ block view
     .card-body
       .d-flex.justify-content-between
         div
-          h4.card-title.mb-0 Traffic
+          h4.card-title.mb-0 Costs
           .small.text-body-secondary January - July 2023
         .btn-toolbar.d-none.d-md-block(role='toolbar' aria-label='Toolbar with buttons')
           .btn-group.btn-group-toggle.mx-3(data-coreui-toggle='buttons')
@@ -156,64 +172,14 @@ block view
           .fw-semibold.text-truncate 40.15%
           .progress.progress-thin.mt-2
             .progress-bar(role='progressbar', style='width: 40%', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100')
-  // /.card
-  .row.g-4.mb-4
-    .col-sm-6.col-lg-4
-      .card(style='--cui-card-cap-bg: #3b5998')
-        .card-header.position-relative.d-flex.justify-content-center.align-items-center
-          svg.icon.icon-3xl.text-white.my-4
-            use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-facebook-f")
-          .chart-wrapper.position-absolute.top-0.start-0.w-100.h-100
-            canvas#social-box-chart-1(height='90')
-        .card-body.row.text-center
-          .col
-            .fs-5.fw-semibold 89k
-            .text-uppercase.text-body-secondary.small friends
-          .vr
-          .col
-            .fs-5.fw-semibold 459
-            .text-uppercase.text-body-secondary.small feeds
-    // /.col
-    .col-sm-6.col-lg-4
-      .card(style='--cui-card-cap-bg: #00aced')
-        .card-header.position-relative.d-flex.justify-content-center.align-items-center
-          svg.icon.icon-3xl.text-white.my-4
-            use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-twitter")
-          .chart-wrapper.position-absolute.top-0.start-0.w-100.h-100
-            canvas#social-box-chart-2(height='90')
-        .card-body.row.text-center
-          .col
-            .fs-5.fw-semibold 973k
-            .text-uppercase.text-body-secondary.small followers
-          .vr
-          .col
-            .fs-5.fw-semibold 1.792
-            .text-uppercase.text-body-secondary.small tweets
-    // /.col
-    .col-sm-6.col-lg-4
-      .card(style='--cui-card-cap-bg: #4875b4')
-        .card-header.position-relative.d-flex.justify-content-center.align-items-center
-          svg.icon.icon-3xl.text-white.my-4
-            use(xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-linkedin")
-          .chart-wrapper.position-absolute.top-0.start-0.w-100.h-100
-            canvas#social-box-chart-3(height='90')
-        .card-body.row.text-center
-          .col
-            .fs-5.fw-semibold 500+
-            .text-uppercase.text-body-secondary.small contacts
-          .vr
-          .col
-            .fs-5.fw-semibold 292
-            .text-uppercase.text-body-secondary.small feeds
-    // /.col
   // /.row
   .row
     .col-md-12
       .card.mb-4
         .card-header
-          | Traffic &amp; Sales
+          | Timeseries
         .card-body
-          .row
+          .d-none.row
             .col-sm-6
               .row
                 .col-6
@@ -367,7 +333,7 @@ block view
             // /.col
           // /.row
           br
-          .table-responsive
+          .d-none.table-responsive
             table.table.border.mb-0
               thead.fw-semibold.text-nowrap
                 tr.align-middle
