@@ -43,7 +43,10 @@
     <!-- We use those styles to style Carbon ads and CoreUI PRO banner, you should remove them in your application.-->
     <link href="css/ads.css" rel="stylesheet">
     <script src="js/config.js"></script>
-    <script src="js/color-modes.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="js/barchart.js"></script>
     <link href="node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css" rel="stylesheet">
   </head>
   <body>
@@ -167,6 +170,7 @@
       </div>
     </div>
     <div class="wrapper d-flex flex-column min-vh-100">
+      <div class="my-overlay"></div>
       <header class="header header-sticky p-0 mb-4">
         <div class="container-fluid border-bottom px-4 justify-content-start">
           <button class="header-toggler" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()" style="margin-inline-start: -14px;">
@@ -190,7 +194,7 @@
             <div class="progress-group">
               <div class="progress-group-header">
                 <div>Analyses in progress</div>
-                <div class="ms-5">0 of 4 completed</div>
+                <div class="ms-5">1 of 4 completed</div>
               </div>
               <div class="progress-group-bars"> 
                 <div class="progress">
@@ -203,7 +207,7 @@
             <div class="progress-group">
               <div class="progress-group-header">
                 <div>Analyses in progress</div>
-                <div class="ms-5">0 of 4 completed</div>
+                <div class="ms-5">1 of 4 completed</div>
               </div>
               <div class="progress-group-bars"> 
                 <div class="progress">
@@ -405,7 +409,23 @@
                     <svg class="icon">
                       <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
                     </svg></a></div>
-                <form class="btn-toolbar d-none d-md-block" role="toolbar" aria-label="Toolbar with buttons"> 
+                <form class="btn-toolbar d-none d-md-block" role="toolbar" aria-label="Toolbar with buttons">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" checked>
+                    <label class="form-check-label" for="inlineCheckbox1">Elimination</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2" checked>
+                    <label class="form-check-label" for="inlineCheckbox2">School closures</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3" checked>
+                    <label class="form-check-label" for="inlineCheckbox3">Business closures</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="inlineCheckbox4" type="checkbox" value="option4" checked>
+                    <label class="form-check-label" for="inlineCheckbox4">No response</label>
+                  </div>
                   <div class="form-check form-switch mb-2">
                     <input class="form-check-input" id="flexSwitchCheckChecked" type="checkbox" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked" style="font-size: 0.875rem;">Show absolute costs</label>
@@ -423,8 +443,11 @@
               <div class="d-none c-chart-wrapper" style="height:300px;margin-top:40px;">
                 <canvas class="chart" id="main-chart" height="300"></canvas>
               </div>
+              <div class="c-chart-wrapper">
+                <div id="highChartsContainer"></div>
+              </div>
             </div>
-            <div class="card-footer">
+            <div class="d-none card-footer">
               <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-5 g-4 mb-2 text-center">
                 <div class="col">
                   <div class="text-body-secondary">Visits</div>
