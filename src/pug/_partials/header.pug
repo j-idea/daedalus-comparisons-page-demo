@@ -6,36 +6,25 @@ header.header.header-sticky.p-0.mb-4
         |
     a.fw-semibold.fs-5.ms-2.link-underline.link-underline-opacity-0(href='#')
         | DAEDALUS Explore
-    .ms-5.d-none.d-lg-block
+    .ms-5.d-none.d-xxl-block
       block breadcrumb
     .d-none.d-xxl-block.ms-auto.mt-2
       block progress
     .d-xxl-none.ms-auto.fixed-bottom.bg-body.p-3.pb-2.border-start.border-top.rounded-start-3.shadow-lg(style='max-width: 728px')
       block progress
-    ul.d-none.header-nav
+    ul.header-nav.ms-auto.d-xxl-none
       li.nav-item.py-1
         .vr.h-100.mx-2.text-body.text-opacity-75
-      li.nav-item.dropdown
-        button.btn.btn-link.nav-link.py-2.px-2.d-flex.align-items-center(type="button" aria-expanded="false" data-coreui-toggle="dropdown")
-          svg.icon.icon-lg.theme-icon-active
-            use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast")
-        ul.dropdown-menu.dropdown-menu-end(style='--cui-dropdown-min-width: 8rem;')
-          li
-            button.dropdown-item.d-flex.align-items-center(type='button' data-coreui-theme-value='light')
-              svg.icon.icon-lg.me-3
-                use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-sun")
-              | Light
-          li
-            button.dropdown-item.d-flex.align-items-center(type='button' data-coreui-theme-value='dark')
-              svg.icon.icon-lg.me-3
-                use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-moon")
-              | Dark
-          li
-            button.dropdown-item.d-flex.align-items-center.active(type='button' data-coreui-theme-value='auto')
-              svg.icon.icon-lg.me-3
-                use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-contrast")
-              | Auto
+      li.nav-item
+        a.nav-link(href="#")
+          svg.icon
+              use(xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-cloud-download")
+      li.nav-item.py-1
+        .vr.h-100.mx-2.text-body.text-opacity-75
+      li.nav-item
+        a.nav-link(href="#")
+          |  ?
   //- Keep font-size to the maximum it can be without going over onto a second line on iPhone SE (small screen)
-  .container-fluid.px-3.d-lg-none(style='font-size: 0.74rem')
+  .container-fluid.px-3.d-xxl-none(style='font-size: 0.74rem')
     block breadcrumb
 
